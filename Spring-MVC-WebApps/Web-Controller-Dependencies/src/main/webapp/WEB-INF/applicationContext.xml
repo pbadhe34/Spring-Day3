@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Middle tier application context definition  
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+  	  
+   <bean id="prodMan" class="com.server.controller.ProductManager">
+        <property name="products">
+            <list>
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="product1" class="com.server.controller.Product">
+        <property name="description">
+		<value>Lamp</value></property>
+        <property name="price">
+		<value>5.75</value></property>
+    </bean>
+        
+    <bean id="product2" class="com.server.controller.Product">
+        <property name="description">
+		<value>Table</value></property>
+        <property name="price">
+		<value>75.25</value></property>
+    </bean>
+
+    <bean id="product3" class="com.server.controller.Product">
+        <property name="description">
+		<value>Chair</value>
+		</property>
+        <property name="price">
+		<value>22.79</value>
+		</property>
+    </bean>
+
+
+	 
+</beans>

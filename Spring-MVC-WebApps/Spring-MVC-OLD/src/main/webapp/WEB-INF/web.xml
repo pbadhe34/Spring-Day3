@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC
+	"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+	"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<!--
+  - Web app deployment descriptor that  loads a  DispatcherServlet instance 
+  - with a specific context.-->
+
+<web-app>
+
+   <display-name>Spring Simple WebApp</display-name>
+
+	<description>Spring  simple web application</description>
+
+  <!--
+    - Servlet that dispatches request to registered handlers (Controller implementations).
+    - Has its own application context, by default defined in "{servlet-name}-servlet.xml",
+    - i.e. "demo-servlet.xml".
+    -
+    - A web app can contain any number of such servlets.-  
+    -->
+	<servlet>
+		<servlet-name>test</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/*.</url-pattern>
+    </servlet-mapping>  
+
+  <!--
+    - Maps the MyDispatcher dispatcher to /simple/*. All handler mappings in
+    - simple-servlet.xml will by default be applied to this subpath.
+    - If a mapping isn't a /* subpath, the handler mappings are considered
+    - relative to the web app root.    -
+    - A single dispatcher could get mapped to multiple paths, like any servlet.
+    -->
+
+	
+  
+     
+
+</web-app>
